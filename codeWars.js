@@ -119,16 +119,38 @@ function makeNegative(num) {
 // NOTE: Each rider travels as far as he can, but never more than 100 miles.
 function riders(stations) {
   let allTrip = 0;
-  let count = 0;
+  let rider = 1;
   for (let elem of stations) {
-    if ((allTrip + elem) >= 100) {
+    if ((allTrip + elem) >= 101) {
       allTrip = elem;
-      count++;
+      rider++;
     } else {
       allTrip += elem;
     }
   }
-  return count;
+  return rider;
 }
+console.log(riders([6, 24, 6, 8, 28, 8, 23, 47, 17, 29, 37, 18, 40, 49]));
 
-riders([6, 24, 6, 8, 28, 8, 23, 47, 17, 29, 37, 18, 40, 49]);
+
+// Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+function longest(s1, s2) {
+  let str1 = getStr(s1, s2);
+  let str2 = getStr(s2, s1);
+  console.log(str1, str2);
+  // return str.split('').sort().join('');
+} 
+
+function getStr(s1, s2) {
+  let str = '';
+  for (let i = 0; i < s2.length; i++) {
+    if (s1.includes(s2[i]) || !s1.includes(s2[i])) {
+      if (!str.includes(s2[i])) {
+        str += s2[i];
+      }
+    }
+  }
+  return str;
+} 
+
+console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
