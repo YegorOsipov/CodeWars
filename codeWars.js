@@ -133,24 +133,44 @@ function riders(stations) {
 console.log(riders([6, 24, 6, 8, 28, 8, 23, 47, 17, 29, 37, 18, 40, 49]));
 
 
-// Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
-function longest(s1, s2) {
-  let str1 = getStr(s1, s2);
-  let str2 = getStr(s2, s1);
-  console.log(str1, str2);
-  // return str.split('').sort().join('');
-} 
+// // Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+// function longest(s1, s2) {
+//   let str1 = getStr(s1, s2);
+//   let str2 = getStr(s2, s1);
+//   console.log(str1.length, str2.length);
+// //   if (str1.length > str2.length) {
+// //     return getStr(str2, str1).split('').sort().join('');
+// //   } else {
+// //     return getStr(str1, str2).split('').sort().join('');
+// //   }
+// } 
 
-function getStr(s1, s2) {
-  let str = '';
-  for (let i = 0; i < s2.length; i++) {
-    if (s1.includes(s2[i]) || !s1.includes(s2[i])) {
-      if (!str.includes(s2[i])) {
-        str += s2[i];
-      }
-    }
+// function getStr(s1, s2) {
+//   let str = '';
+//   for (let i = 0; i < s2.length; i++) {
+//     if (s1.includes(s2[i]) || !s1.includes(s2[i])) {
+//       if (!str.includes(s2[i])) {
+//         str += s2[i];
+//       }
+//     }
+//   }
+//   return str;
+// } 
+
+// console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
+
+// Your function takes two arguments:
+// current father's age (years)
+// current age of his son (years)
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let twiceOld = dadYearsOld - sonYearsOld * 2;
+  if (twiceOld > 0) {
+    return twiceOld; 
+  } else {
+    return sonYearsOld * 2 - dadYearsOld;
   }
-  return str;
-} 
-
-console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
+}
+function twiceAsOld(a, b) {
+  return a>2*b ? a-2*b : 2*b-a;
+}
