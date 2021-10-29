@@ -283,3 +283,12 @@ function descendingOrder(n){
   return Number(a);
 }
 console.log(descendingOrder(12345));
+function descendingOrder(n){
+  return parseInt(String(n).split('').sort().reverse().join(''));
+}
+
+
+// The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+function century(year) {
+  return Math.ceil(year / 100);
+}
