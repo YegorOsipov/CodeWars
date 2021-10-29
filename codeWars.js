@@ -191,3 +191,37 @@ function arrayPlusArray(arr1, arr2) {
 }
 
 
+// Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+// Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+function lovefunc(flower1, flower2){
+  return (flower1 % 2 == 0 && flower2 % 2 != 0) || (flower2 % 2 == 0 && flower1 % 2 != 0);   
+}
+function lovefunc(flower1, flower2){
+  return (flower1 + flower2) % 2 === 1;
+}
+
+
+// Given three integers a ,b ,c, return the largest number obtained after inserting the following operators and brackets: +, *, ()
+// In other words , try every combination of a,b,c with [*+()] , and return the Maximum Obtained
+function expressionMatter(a, b, c) {
+  let arr = [];
+  arr.push(a + b + c);
+  arr.push(a * (b + c));
+  arr.push(a * b * c);
+  arr.push(a + b * c);
+  arr.push((a + b) * c);
+  let max = arr[0];
+  
+  for (let elem of arr) {
+    if (elem > max) {
+      max = elem;
+    }
+  }
+  return max;
+}
+console.log(expressionMatter(1, 1, 1));
+
+function expressionMatter(a, b, c) {
+  return Math.max(a+b+c, a*b*c, (a+b)*c, a*(b+c));
+}
+
