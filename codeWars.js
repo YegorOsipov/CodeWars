@@ -13,7 +13,7 @@ function evenNumbers(array, number) {
     return popped;
   }
 // other
-const evenNumbers = (array, number) => array.filter(item => item % 2 === 0).slice(-number);
+const evenNumber = (array, number) => array.filter(item => item % 2 === 0).slice(-number);
 
 
 // Simple, given a string of words, return the length of the shortest word(s).
@@ -225,3 +225,9 @@ function expressionMatter(a, b, c) {
   return Math.max(a+b+c, a*b*c, (a+b)*c, a*(b+c));
 }
 
+
+// You are given two interior angles (in degrees) of a triangle.
+// Write a function to return the 3rd.
+function otherAngle(a, b) {
+  return 180 - (a + b);
+}
