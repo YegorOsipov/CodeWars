@@ -231,3 +231,23 @@ function expressionMatter(a, b, c) {
 function otherAngle(a, b) {
   return 180 - (a + b);
 }
+
+
+// Move all exclamation marks to the end of the sentence
+function remove(str) {
+  let arr = str.split('');
+  let remove = [];
+  for (let i = 0; arr.includes('!'); i++) {
+    if (arr[i] == '!') {
+      remove.push(arr.splice(i, 1));
+    }
+  }
+  return arr.concat(remove).join('');
+}
+console.log(remove("Hi! Hi!! Hi!"));
+
+function usdcny(usd) {
+  let yuan = usd * 6.75;
+  return yuan + ' Chinese Yuan';
+}
+console.log(usdcny(15));
