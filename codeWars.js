@@ -345,3 +345,31 @@ function isVow(arr){
 }
 
 console.log(isVow([118,117,120,121,117,98,122,97,120,106,104,116,113,114,113,120,106]));
+
+
+// Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+// It should remove all values from list a, which are present in list b keeping their order.
+function arrayDiff(a, b) {
+  let uArr = [];
+  
+  if (a.length == 0) {
+    return []
+  }
+  
+  for (let i = 0; i < a.length; i++) {
+    if (b.indexOf(a[i]) === -1) {
+      uArr.push(a[i]);
+    }
+  }
+  
+   for (let i = 0; i < b.length; i++) {
+    if (a.indexOf(b[i]) === -1) {
+      uArr.push(b[i]);
+    }
+  }
+  return uArr;
+}
+
+function array_diff(a, b) {
+  return a.filter(e => !b.includes(e));
+}
