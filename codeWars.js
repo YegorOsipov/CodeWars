@@ -374,27 +374,6 @@ function array_diff(a, b) {
   return a.filter(e => !b.includes(e));
 }
 
-
-
-function lastDigit(n, d) {
-  if (d > n) {
-    return String(n).split('').map(Number);
-  }
-  
-  if (d <= n) {
-    let result = String(n).split('').map(Number).filter(function(elem) {
-    let pop = [];
-    for (let i = 0; i < d; i++) {
-      pop.pop();
-    }
-    
-    return pop;
-  });
-  }
-
-}
-console.log(lastDigit(1,2));
-
 function lastDigit(n, d) {
   let arr = String(n).split('').map(Number);
   if (d > arr.length) {
