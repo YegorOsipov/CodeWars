@@ -302,3 +302,46 @@ function century(year) {
 function testEven(n) {
   return n % 2 == 0;
 }
+
+
+
+function remove(s){
+  for (let i = 0; s[s.length - 1] == '!'; i++) {
+    if (s[i] == '!' && i == s.length - 1) {
+      s = s.slice(0, i);
+    }
+  }
+  return s;
+}
+
+// let s = 'Hi!!!';
+// s = s.slice(0, 4);
+// console.log(s.length);
+
+console.log(remove("Hi!!!"));
+
+
+
+function isVow(arr){
+  let a = 97,
+      e = 101,
+      i = 105,
+      o = 111,
+      u = 117;
+  for (let j = 0; j < arr.length; j++) {
+    if (arr[j] == a) {
+      arr[j] = 'a';
+    } else if (arr[j] == e) {
+      arr[j] = 'e';
+    } else if (arr[j] == i) {
+      arr[j] = 'i';
+    } else if (arr[j] == o) {
+      arr[j] = 'o';
+    } else if (arr[j] == u) {
+      arr[j] = 'u';
+    }
+  }
+  return arr;
+}
+
+console.log(isVow([118,117,120,121,117,98,122,97,120,106,104,116,113,114,113,120,106]));
