@@ -517,4 +517,34 @@ console.log(basicOp('+', 1, 5));
 
 
 // You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left. Considering these factors, write a function that tells you if it is possible to get to the pump or not. Function should return true (1 in Prolog) if it is possible and false (0 in Prolog) if not. The input values are always positive.
-const zeroFuel = (distanceToPump, mpg, fuelLeft) => distanceToPump / mpg == fuelLeft || distanceToPump / mpg < fuelLeft; 
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => distanceToPump / mpg == fuelLeft || distanceToPump / mpg < fuelLeft;
+
+
+function diffBig2(arr) {
+  arr.sort(function(a, b) {
+    return a - b;
+  });
+  return arr[arr.length -1] - arr[arr.length - 2];
+}
+
+
+console.log(diffBig2([2, 1]));
+
+
+function stray(arr) {
+  if (arr[0] != arr[1]) {
+    return arr[0];
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[i + 1]) {
+      return arr[i + 1];
+    }
+  }
+}
+
+function stray(numbers){
+  for (var i in numbers){
+     if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])){return numbers[i]}
+  }
+}
+console.log(stray([8, 17, 17, 17, 17, 17, 17]));
