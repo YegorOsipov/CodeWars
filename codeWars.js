@@ -548,3 +548,19 @@ function stray(numbers){
   }
 }
 console.log(stray([8, 17, 17, 17, 17, 17, 17]));
+
+
+function strong(n) {
+  let arr = String(n).split('').map(Number);
+  let sum = 0;
+  for (let elem of arr) {
+    sum += fl(elem);
+  }
+  return (sum == n) ? "STRONG!!!!" : "Not Strong !!";
+}
+
+
+function fl(n) {
+return n ? n * fl(n - 1) : 1;
+}
+console.log(strong(93));
