@@ -498,3 +498,10 @@ function greet(name){
 function repeatStr (n, s) {
   return s.repeat(n);
 }
+
+
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+function removeExclamationMarks(s) {
+  return s.replace(/!/g, '');
+}
+console.log(removeExclamationMarks("Hello World!!"));
