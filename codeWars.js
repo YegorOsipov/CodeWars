@@ -607,3 +607,9 @@ console.log(FilterString("a1b2c3"));
 
 // Complete the solution so that it reverses the string passed into it.
 let solution = (str) => str.split('').reverse().join('');
+
+
+// JavaScript Arrays support a filter function (starting in JavaScript 1.6). Use the filter functionality to complete the function given.
+function getEvenNumbers(arr){
+  return arr.filter(elem => (elem % 2 == 0));
+}
