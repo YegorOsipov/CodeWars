@@ -573,6 +573,8 @@ function onlyLetters(str) {
 
 console.log("'that's a pie$ce o_f p#ie!");
 
+
+// You get an array of numbers, return the sum of all of the positives ones.
 function positiveSum(arr) {
   let sum = 0;
   for (let elem of arr) {
@@ -589,6 +591,8 @@ function positiveSum (arr) {
   return arr.filter(x => x>=0).reduce((a, c) => a + c, 0);
 }
 
+
+// Oh no! The number has been mixed up with the text. Your goal is to retreive the number from the text, can you return the number back to it's original state?
 var FilterString = function(value) {
   let str = '';
   for (let i = 0; i < value.length; i++) {
@@ -599,3 +603,7 @@ var FilterString = function(value) {
   return Number(str);
 }
 console.log(FilterString("a1b2c3"));
+
+
+// Complete the solution so that it reverses the string passed into it.
+let solution = (str) => str.split('').reverse().join('');
