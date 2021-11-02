@@ -584,3 +584,18 @@ function positiveSum(arr) {
 }
 
 console.log(positiveSum([1,2,3,4,5]));
+
+function positiveSum (arr) {
+  return arr.filter(x => x>=0).reduce((a, c) => a + c, 0);
+}
+
+var FilterString = function(value) {
+  let str = '';
+  for (let i = 0; i < value.length; i++) {
+    if (!isNaN(Number(value[i]))) {
+      str += value[i];
+    }    
+  }
+  return Number(str);
+}
+console.log(FilterString("a1b2c3"));
