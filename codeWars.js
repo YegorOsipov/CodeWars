@@ -673,6 +673,15 @@
 // let totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals;
 
 
+
+// John is a worker, his job is to remove screws from a machine. There are 2 types of screws: slotted (-) and cross (+). John has two screwdrivers, one for each type of screw.
+// The input will be a (non-empty) string of screws, e.g. : "---+++"
+// When John begins to work, he stands at the first screw, with the correct screwdriver in his hand, and another in his tool kit. He works from left to right, removing every screw. When necessary, he switches between the screwdriver in his hand and the one in his tool kit.
+// Each action takes a set amount of time:
+// remove one screw : 1 second
+// move to the next screw: 1 second
+// switch screwdrivers: 5 seconds
+// Your task is to return the total time taken to remove all the screws, in seconds.
 function sc(screws) {
   let time = 1;
   let arr = screws.split('');
@@ -687,3 +696,22 @@ function sc(screws) {
 }
 
 console.log(sc("-+-+-----------"));
+
+
+
+// Your task is to write a function maskify, which changes all but the last four characters into '#'.
+function maskify(cc) {
+  if (cc.length < 5) {
+    return cc;
+  }
+  let arr = cc.split('');
+  for (let i = 0; i < arr.length - 4; i ++) {
+    arr[i] = '#';
+  } 
+  return arr.join('');
+}
+console.log(maskify('556364607935616'));
+
+function maskify(cc) {
+  return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+}
