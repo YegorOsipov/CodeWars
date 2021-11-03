@@ -640,3 +640,13 @@ function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMon
 }
 
 console.log(nbMonths(2000, 8000, 1000, 1.5));
+
+
+function doubleChar(str) {
+  return str.split('').map(el => {
+    return el = el + el;
+  }).join('');
+} 
+console.log(doubleChar('Adidas'));
+
+const doubleChar = (str) => str.split("").map(c => c + c).join("");
