@@ -278,390 +278,412 @@
 
 
 // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
-function descendingOrder(n){
-  let a = String(n).split('').sort().reverse().join('');
-  return Number(a);
-}
-console.log(descendingOrder(12345));
-function descendingOrder(n){
-  return parseInt(String(n).split('').sort().reverse().join(''));
-}
+// function descendingOrder(n){
+//   let a = String(n).split('').sort().reverse().join('');
+//   return Number(a);
+// }
+// console.log(descendingOrder(12345));
+// function descendingOrder(n){
+//   return parseInt(String(n).split('').sort().reverse().join(''));
+// }
 
 
-// The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
-function century(year) {
-  return Math.ceil(year / 100);
-}
+// // The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+// function century(year) {
+//   return Math.ceil(year / 100);
+// }
 
 
-// In this Kata we are passing a number (n) into a function.
-// Your code will determine if the number passed is even (or not).
-// The function needs to return either a true or false.
-// Numbers may be positive or negative, integers or floats.
-// Floats are considered UNeven for this kata.
-function testEven(n) {
-  return n % 2 == 0;
-}
-
-
-
-function remove(s){
-  for (let i = 0; s[s.length - 1] == '!'; i++) {
-    if (s[i] == '!' && i == s.length - 1) {
-      s = s.slice(0, i);
-    }
-  }
-  return s;
-}
-
-// let s = 'Hi!!!';
-// s = s.slice(0, 4);
-// console.log(s.length);
-
-console.log(remove("Hi!!!"));
+// // In this Kata we are passing a number (n) into a function.
+// // Your code will determine if the number passed is even (or not).
+// // The function needs to return either a true or false.
+// // Numbers may be positive or negative, integers or floats.
+// // Floats are considered UNeven for this kata.
+// function testEven(n) {
+//   return n % 2 == 0;
+// }
 
 
 
-function isVow(arr){
-  let a = 97,
-      e = 101,
-      i = 105,
-      o = 111,
-      u = 117;
-  for (let j = 0; j < arr.length; j++) {
-    if (arr[j] == a) {
-      arr[j] = 'a';
-    } else if (arr[j] == e) {
-      arr[j] = 'e';
-    } else if (arr[j] == i) {
-      arr[j] = 'i';
-    } else if (arr[j] == o) {
-      arr[j] = 'o';
-    } else if (arr[j] == u) {
-      arr[j] = 'u';
-    }
-  }
-  return arr;
-}
+// function remove(s){
+//   for (let i = 0; s[s.length - 1] == '!'; i++) {
+//     if (s[i] == '!' && i == s.length - 1) {
+//       s = s.slice(0, i);
+//     }
+//   }
+//   return s;
+// }
 
-console.log(isVow([118,117,120,121,117,98,122,97,120,106,104,116,113,114,113,120,106]));
+// // let s = 'Hi!!!';
+// // s = s.slice(0, 4);
+// // console.log(s.length);
+
+// console.log(remove("Hi!!!"));
 
 
-// Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
-// It should remove all values from list a, which are present in list b keeping their order.
-function arrayDiff(a, b) {
-  let uArr = [];
+
+// function isVow(arr){
+//   let a = 97,
+//       e = 101,
+//       i = 105,
+//       o = 111,
+//       u = 117;
+//   for (let j = 0; j < arr.length; j++) {
+//     if (arr[j] == a) {
+//       arr[j] = 'a';
+//     } else if (arr[j] == e) {
+//       arr[j] = 'e';
+//     } else if (arr[j] == i) {
+//       arr[j] = 'i';
+//     } else if (arr[j] == o) {
+//       arr[j] = 'o';
+//     } else if (arr[j] == u) {
+//       arr[j] = 'u';
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(isVow([118,117,120,121,117,98,122,97,120,106,104,116,113,114,113,120,106]));
+
+
+// // Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+// // It should remove all values from list a, which are present in list b keeping their order.
+// function arrayDiff(a, b) {
+//   let uArr = [];
   
-  if (a.length == 0) {
-    return []
-  }
+//   if (a.length == 0) {
+//     return []
+//   }
   
-  for (let i = 0; i < a.length; i++) {
-    if (b.indexOf(a[i]) === -1) {
-      uArr.push(a[i]);
-    }
-  }
+//   for (let i = 0; i < a.length; i++) {
+//     if (b.indexOf(a[i]) === -1) {
+//       uArr.push(a[i]);
+//     }
+//   }
   
-   for (let i = 0; i < b.length; i++) {
-    if (a.indexOf(b[i]) === -1) {
-      uArr.push(b[i]);
-    }
-  }
-  return uArr;
-}
+//    for (let i = 0; i < b.length; i++) {
+//     if (a.indexOf(b[i]) === -1) {
+//       uArr.push(b[i]);
+//     }
+//   }
+//   return uArr;
+// }
 
-function array_diff(a, b) {
-  return a.filter(e => !b.includes(e));
-}
+// function array_diff(a, b) {
+//   return a.filter(e => !b.includes(e));
+// }
 
-function lastDigit(n, d) {
-  let arr = String(n).split('').map(Number);
-  if (d > arr.length) {
-    return arr;
-  } else if (d <= 0) {
-    return [];
-  } else {
-    let pop = [];
-    for (let i = 0; i < d; i++) {
-      pop.unshift(arr.pop());
-    }
-    return pop;
-  } 
-}
-console.log(lastDigit(123, 2));
-
-
-// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
-function boolToWord( bool ){
-  if (bool == true) {
-    return 'Yes';
-  } else {
-    return 'No';
-  }
-}
+// function lastDigit(n, d) {
+//   let arr = String(n).split('').map(Number);
+//   if (d > arr.length) {
+//     return arr;
+//   } else if (d <= 0) {
+//     return [];
+//   } else {
+//     let pop = [];
+//     for (let i = 0; i < d; i++) {
+//       pop.unshift(arr.pop());
+//     }
+//     return pop;
+//   } 
+// }
+// console.log(lastDigit(123, 2));
 
 
+// // Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+// function boolToWord( bool ){
+//   if (bool == true) {
+//     return 'Yes';
+//   } else {
+//     return 'No';
+//   }
+// }
 
-function createPhoneNumber(arr){
-  return '(' + String(arr[0]) + String(arr[1]) + String(arr[2]) + ')' + ' ' + String(arr[3]) + String(arr[4]) + String(arr[5]) + '-' + String(arr[6]) + String(arr[7]) + String(arr[8]) + String(arr[9]);
-}
 
-function createPhoneNumber(numbers){
-  let format = "(xxx) xxx-xxxx";
+
+// function createPhoneNumber(arr){
+//   return '(' + String(arr[0]) + String(arr[1]) + String(arr[2]) + ')' + ' ' + String(arr[3]) + String(arr[4]) + String(arr[5]) + '-' + String(arr[6]) + String(arr[7]) + String(arr[8]) + String(arr[9]);
+// }
+
+// function createPhoneNumber(numbers){
+//   let format = "(xxx) xxx-xxxx";
   
-  for(let i = 0; i < numbers.length; i++)
-  {
-    format = format.replace('x', numbers[i]);
-  }
+//   for(let i = 0; i < numbers.length; i++)
+//   {
+//     format = format.replace('x', numbers[i]);
+//   }
   
-  return format;
-}
+//   return format;
+// }
 
 
-// We need a function that can transform a number into a string.
-// What ways of achieving this do you know?
-function numberToString(num) {
-  return String(num);
-}
+// // We need a function that can transform a number into a string.
+// // What ways of achieving this do you know?
+// function numberToString(num) {
+//   return String(num);
+// }
 
 
-// Very simple, given a number, find its opposite.
-function opposite(number) {
-  return number - (number * 2);
-}
+// // Very simple, given a number, find its opposite.
+// function opposite(number) {
+//   return number - (number * 2);
+// }
 
 
-// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
-function even_or_odd(number) {
-  if (number % 2 == 0) {
-    return 'Even';
-  } else {
-    return 'Odd'; 
-  }
-}
+// // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+// function even_or_odd(number) {
+//   if (number % 2 == 0) {
+//     return 'Even';
+//   } else {
+//     return 'Odd'; 
+//   }
+// }
 
 
-// Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple like so: (index1, index2).
-// For the purposes of this kata, some tests may have multiple answers; any valid solutions will be accepted.
-// The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
+// // Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple like so: (index1, index2).
+// // For the purposes of this kata, some tests may have multiple answers; any valid solutions will be accepted.
+// // The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
 
-function twoSum(nums, target) {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === target) {
-        return [i, j];
-      }
-    }
-  }
-}
+// function twoSum(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         return [i, j];
+//       }
+//     }
+//   }
+// }
 
-console.log(twoSum([1, 3, 4, 6], 10));
-
-
-
-// The following was a question that I received during a technical interview for an entry level software developer position. I thought I'd post it here so that everyone could give it a go:
-// You are given an unsorted array containing all the integers from 0 to 100 inclusively. However, one number is missing. Write a function to find and return this number. What are the time and space complexities of your solution?
-
-function missingNo(nums) {
-  nums.sort(function(a, b) {
-    return a - b;
-  });
-  if (!nums.includes(0)) {
-    return 0;
-  } 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] + 1 !== nums[i + 1]) {
-      return nums[i] + 1;
-    }
-  }
-}
+// console.log(twoSum([1, 3, 4, 6], 10));
 
 
-let arr1 = [9, 45, 53, 10, 100, 30, 85, 72, 69, 93, 98, 27, 73, 82, 91, 60, 5, 79, 88, 18, 71, 36, 44, 22, 89, 40, 59, 80, 81, 67, 25, 54, 13, 64, 56, 39, 48, 92, 84, 94, 87, 90, 77, 63, 32, 68, 37, 96, 23, 0, 95, 1, 52, 78, 6, 57, 50, 2, 46, 19, 76, 47, 14, 4, 3, 29, 17, 11, 21, 24, 74, 65, 12, 83, 28, 41, 66, 7, 58, 55, 51, 43, 97, 42, 86, 49, 31, 20, 75, 70, 34, 33, 38, 8, 15, 62, 35, 61, 99, 16];
-console.log(missingNo(arr1));
-missingNo =(n)=> {
-  for(i=0;i<=100;i++) {
-    if(!n.includes(i)) {
-      return i;
-    }
-  }
-}
+
+// // The following was a question that I received during a technical interview for an entry level software developer position. I thought I'd post it here so that everyone could give it a go:
+// // You are given an unsorted array containing all the integers from 0 to 100 inclusively. However, one number is missing. Write a function to find and return this number. What are the time and space complexities of your solution?
+
+// function missingNo(nums) {
+//   nums.sort(function(a, b) {
+//     return a - b;
+//   });
+//   if (!nums.includes(0)) {
+//     return 0;
+//   } 
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] + 1 !== nums[i + 1]) {
+//       return nums[i] + 1;
+//     }
+//   }
+// }
 
 
-// Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
-function greet(name){
-  return 'Hello, ' + name + ' how are you doing today?'
-}
+// let arr1 = [9, 45, 53, 10, 100, 30, 85, 72, 69, 93, 98, 27, 73, 82, 91, 60, 5, 79, 88, 18, 71, 36, 44, 22, 89, 40, 59, 80, 81, 67, 25, 54, 13, 64, 56, 39, 48, 92, 84, 94, 87, 90, 77, 63, 32, 68, 37, 96, 23, 0, 95, 1, 52, 78, 6, 57, 50, 2, 46, 19, 76, 47, 14, 4, 3, 29, 17, 11, 21, 24, 74, 65, 12, 83, 28, 41, 66, 7, 58, 55, 51, 43, 97, 42, 86, 49, 31, 20, 75, 70, 34, 33, 38, 8, 15, 62, 35, 61, 99, 16];
+// console.log(missingNo(arr1));
+// missingNo =(n)=> {
+//   for(i=0;i<=100;i++) {
+//     if(!n.includes(i)) {
+//       return i;
+//     }
+//   }
+// }
 
 
-// Write a function called repeatStr which repeats the given string string exactly n times.
-function repeatStr (n, s) {
-  return s.repeat(n);
-}
+// // Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+// function greet(name){
+//   return 'Hello, ' + name + ' how are you doing today?'
+// }
 
 
-// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
-function removeExclamationMarks(s) {
-  return s.replace(/!/g, '');
-}
-console.log(removeExclamationMarks("Hello World!!"));
+// // Write a function called repeatStr which repeats the given string string exactly n times.
+// function repeatStr (n, s) {
+//   return s.repeat(n);
+// }
 
 
-// Your task is to create a function that does four basic mathematical operations.
-// The function should take three arguments - operation(string/char), value1(number), value2(number).
-// The function should return result of numbers after applying the chosen operation.
-function basicOp(op, a, b) {
-  return (op === '+') ? (a + b) : (op === '-') ? (a - b) : (op === '*') ? (a * b) : (op === '/') ? (a / b) : 'not find';
-}
-console.log(basicOp('+', 1, 5));
+// // Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+// function removeExclamationMarks(s) {
+//   return s.replace(/!/g, '');
+// }
+// console.log(removeExclamationMarks("Hello World!!"));
 
 
-// You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left. Considering these factors, write a function that tells you if it is possible to get to the pump or not. Function should return true (1 in Prolog) if it is possible and false (0 in Prolog) if not. The input values are always positive.
-const zeroFuel = (distanceToPump, mpg, fuelLeft) => distanceToPump / mpg == fuelLeft || distanceToPump / mpg < fuelLeft;
+// // Your task is to create a function that does four basic mathematical operations.
+// // The function should take three arguments - operation(string/char), value1(number), value2(number).
+// // The function should return result of numbers after applying the chosen operation.
+// function basicOp(op, a, b) {
+//   return (op === '+') ? (a + b) : (op === '-') ? (a - b) : (op === '*') ? (a * b) : (op === '/') ? (a / b) : 'not find';
+// }
+// console.log(basicOp('+', 1, 5));
 
 
-function diffBig2(arr) {
-  arr.sort(function(a, b) {
-    return a - b;
-  });
-  return arr[arr.length -1] - arr[arr.length - 2];
-}
+// // You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left. Considering these factors, write a function that tells you if it is possible to get to the pump or not. Function should return true (1 in Prolog) if it is possible and false (0 in Prolog) if not. The input values are always positive.
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => distanceToPump / mpg == fuelLeft || distanceToPump / mpg < fuelLeft;
 
 
-console.log(diffBig2([2, 1]));
+// function diffBig2(arr) {
+//   arr.sort(function(a, b) {
+//     return a - b;
+//   });
+//   return arr[arr.length -1] - arr[arr.length - 2];
+// }
 
 
-function stray(arr) {
-  if (arr[0] != arr[1]) {
-    return arr[0];
-  }
-  for (let i = 0; i < arr.length; i++) {
+// console.log(diffBig2([2, 1]));
+
+
+// function stray(arr) {
+//   if (arr[0] != arr[1]) {
+//     return arr[0];
+//   }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== arr[i + 1]) {
+//       return arr[i + 1];
+//     }
+//   }
+// }
+
+// function stray(numbers){
+//   for (var i in numbers){
+//      if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])){return numbers[i]}
+//   }
+// }
+// console.log(stray([8, 17, 17, 17, 17, 17, 17]));
+
+
+// function strong(n) {
+//   let arr = String(n).split('').map(Number);
+//   let sum = 0;
+//   for (let elem of arr) {
+//     sum += fl(elem);
+//   }
+//   return (sum == n) ? "STRONG!!!!" : "Not Strong !!";
+// }
+
+
+// function fl(n) {
+// return n ? n * fl(n - 1) : 1;
+// }
+// console.log(strong(93));
+
+
+// function onlyLetters(str) {
+//   let w = str.replace(/[a-z]/g, "");
+//   return w;
+// }
+
+// console.log("'that's a pie$ce o_f p#ie!");
+
+
+// // You get an array of numbers, return the sum of all of the positives ones.
+// function positiveSum(arr) {
+//   let sum = 0;
+//   for (let elem of arr) {
+//     if (elem > 0) {
+//       sum += elem;
+//     }
+//   }
+//   return sum;
+// }
+
+// console.log(positiveSum([1,2,3,4,5]));
+
+// function positiveSum (arr) {
+//   return arr.filter(x => x>=0).reduce((a, c) => a + c, 0);
+// }
+
+
+// // Oh no! The number has been mixed up with the text. Your goal is to retreive the number from the text, can you return the number back to it's original state?
+// var FilterString = function(value) {
+//   let str = '';
+//   for (let i = 0; i < value.length; i++) {
+//     if (!isNaN(Number(value[i]))) {
+//       str += value[i];
+//     }    
+//   }
+//   return Number(str);
+// }
+// console.log(FilterString("a1b2c3"));
+
+
+// // Complete the solution so that it reverses the string passed into it.
+// let solution = (str) => str.split('').reverse().join('');
+
+
+// // JavaScript Arrays support a filter function (starting in JavaScript 1.6). Use the filter functionality to complete the function given.
+// function getEvenNumbers(arr){
+//   return arr.filter(elem => (elem % 2 == 0));
+// }
+
+// // let getEvenNumbers = arr => arr.filter(elem => (elem % 2 == 0));
+
+
+// function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+//   let month = 0;
+//   let total = startPriceOld;
+//   if (startPriceOld >= startPriceNew) {
+//     return [month, total - startPriceNew];
+//   }
+//   while (total <= startPriceNew) {
+//     total += savingperMonth;
+//     total -= startPriceOld * percentLossByMonth / 100;
+
+//     startPriceNew -= startPriceNew * percentLossByMonth / 100;
+//     startPriceOld -= startPriceOld * percentLossByMonth / 100;
+
+//     month++;
+
+//     if (month % 2 !== 0) {
+//       percentLossByMonth += 0.5;
+//     }
+//   }
+//   return [month, Math.round(total - startPriceNew)];
+// }
+
+// console.log(nbMonths(2000, 8000, 1000, 1.5));
+
+
+// // Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+// function doubleChar(str) {
+//   return str.split('').map(el => {
+//     return el = el + el;
+//   }).join('');
+// } 
+// console.log(doubleChar('Adidas'));
+
+// // const doubleChar = (str) => str.split("").map(c => c + c).join("");
+
+
+// // Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+// const summation = num => {
+//   let sum = 0;
+//   for (let i = 0; i <= num; i++) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+// console.log(summation(8));
+
+
+// // Use variables to find the sum of the goals Messi scored in 3 competitions
+// const laLigaGoals = 43;
+// const championsLeagueGoals = 10;
+// const copaDelReyGoals = 5;
+
+// let totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals;
+
+
+function sc(screws) {
+  let time = 1;
+  let arr = screws.split('');
+  for (let i = 0; i < arr.length - 1; i++) {
     if (arr[i] !== arr[i + 1]) {
-      return arr[i + 1];
+      time += 7;
+    } else {
+      time += 2;
     }
   }
+  return time;
 }
 
-function stray(numbers){
-  for (var i in numbers){
-     if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])){return numbers[i]}
-  }
-}
-console.log(stray([8, 17, 17, 17, 17, 17, 17]));
-
-
-function strong(n) {
-  let arr = String(n).split('').map(Number);
-  let sum = 0;
-  for (let elem of arr) {
-    sum += fl(elem);
-  }
-  return (sum == n) ? "STRONG!!!!" : "Not Strong !!";
-}
-
-
-function fl(n) {
-return n ? n * fl(n - 1) : 1;
-}
-console.log(strong(93));
-
-
-function onlyLetters(str) {
-  let w = str.replace(/[a-z]/g, "");
-  return w;
-}
-
-console.log("'that's a pie$ce o_f p#ie!");
-
-
-// You get an array of numbers, return the sum of all of the positives ones.
-function positiveSum(arr) {
-  let sum = 0;
-  for (let elem of arr) {
-    if (elem > 0) {
-      sum += elem;
-    }
-  }
-  return sum;
-}
-
-console.log(positiveSum([1,2,3,4,5]));
-
-function positiveSum (arr) {
-  return arr.filter(x => x>=0).reduce((a, c) => a + c, 0);
-}
-
-
-// Oh no! The number has been mixed up with the text. Your goal is to retreive the number from the text, can you return the number back to it's original state?
-var FilterString = function(value) {
-  let str = '';
-  for (let i = 0; i < value.length; i++) {
-    if (!isNaN(Number(value[i]))) {
-      str += value[i];
-    }    
-  }
-  return Number(str);
-}
-console.log(FilterString("a1b2c3"));
-
-
-// Complete the solution so that it reverses the string passed into it.
-let solution = (str) => str.split('').reverse().join('');
-
-
-// JavaScript Arrays support a filter function (starting in JavaScript 1.6). Use the filter functionality to complete the function given.
-function getEvenNumbers(arr){
-  return arr.filter(elem => (elem % 2 == 0));
-}
-
-// let getEvenNumbers = arr => arr.filter(elem => (elem % 2 == 0));
-
-
-function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
-  let month = 0;
-  let total = startPriceOld;
-  if (startPriceOld >= startPriceNew) {
-    return [month, total - startPriceNew];
-  }
-  while (total <= startPriceNew) {
-    total += savingperMonth;
-    total -= startPriceOld * percentLossByMonth / 100;
-
-    startPriceNew -= startPriceNew * percentLossByMonth / 100;
-    startPriceOld -= startPriceOld * percentLossByMonth / 100;
-
-    month++;
-
-    if (month % 2 !== 0) {
-      percentLossByMonth += 0.5;
-    }
-  }
-  return [month, Math.round(total - startPriceNew)];
-}
-
-console.log(nbMonths(2000, 8000, 1000, 1.5));
-
-
-// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
-function doubleChar(str) {
-  return str.split('').map(el => {
-    return el = el + el;
-  }).join('');
-} 
-console.log(doubleChar('Adidas'));
-
-const doubleChar = (str) => str.split("").map(c => c + c).join("");
-
-
-// Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
-const summation = num => {
-  let sum = 0;
-  for (let i = 0; i <= num; i++) {
-    sum += i;
-  }
-  return sum;
-}
-
-console.log(summation(8));
-
-
+console.log(sc("-+-+-----------"));
