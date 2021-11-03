@@ -642,6 +642,7 @@ function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMon
 console.log(nbMonths(2000, 8000, 1000, 1.5));
 
 
+// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
 function doubleChar(str) {
   return str.split('').map(el => {
     return el = el + el;
@@ -650,3 +651,17 @@ function doubleChar(str) {
 console.log(doubleChar('Adidas'));
 
 const doubleChar = (str) => str.split("").map(c => c + c).join("");
+
+
+// Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+const summation = num => {
+  let sum = 0;
+  for (let i = 0; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+console.log(summation(8));
+
+
