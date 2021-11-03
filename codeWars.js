@@ -715,3 +715,30 @@ console.log(maskify('556364607935616'));
 function maskify(cc) {
   return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
 }
+
+
+function spinWords(str){
+  let arr = str.split(' ');
+  if (arr.length === 1) {
+    if (str.length > 4) {
+      return str.split('').reverse().join('');
+    } else {
+      return str;
+    }
+  }
+
+  return arr.map(function(elem) {
+    if (elem.length > 4) {
+      return elem.split('').reverse().join('');
+    } else {
+      return elem;
+    }
+  }).join(' ');
+}
+
+function spinWords(words){
+  return words.split(' ').map(function (word) {
+    return (word.length > 4) ? word.split('').reverse().join('') : word;
+  }).join(' ');
+}
+
