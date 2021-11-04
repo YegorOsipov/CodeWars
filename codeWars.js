@@ -773,3 +773,56 @@ function getCount(str) {
   return vowelsCount;
 }
 console.log(getCount("o a kak ushakov lil vo kashu kakao"));
+
+// function getCount(str) {
+//   var vowelsCount = 0;
+//   var vowels = ["a","e","i","o","u"];
+//   for(var i = 0;i < str.length;i++){
+//     for(var j=0;j<vowels.length;j++){
+//       if(str[i] === vowels[j]){
+//         vowelsCount++;
+//       }
+//     }
+//   }
+  
+//   return vowelsCount;
+// }
+
+
+
+// function makeString(s){
+//   let result = '';
+//   s.split(' ').forEach(el => {
+//     result += el.slice(0, 1);
+//   });
+//   return result;
+// }
+// console.log(makeString("sees eyes xray yoat"));
+
+// const makeString = s => s.split(' ').map(x => x[0]).join('')
+
+
+// You have an array of non-negative integers. You need to calculate the difference between the 1st biggest number and the 2nd biggest number of the array.
+function diffBig2(arr) {
+  let newArr = [];
+  newArr.push(arr.splice(arr.indexOf(maxDigit(arr)), 1));
+  newArr.push(arr.splice(arr.indexOf(maxDigit(arr)), 1));
+  return newArr[0][0] - newArr[1][0];
+}
+console.log(diffBig2([13, 3, 66]));
+
+function maxDigit(arr) {
+  let max = arr[0];
+  for (let elem of arr) {
+    if (elem > max) {
+      max = elem;
+    }
+  }
+  return max;
+}
+
+// const diffBig2 = arr => {
+//   let max = Math.max(...arr);
+//   arr.splice(arr.indexOf(max), 1);
+//   return max - Math.max(...arr);
+// }
