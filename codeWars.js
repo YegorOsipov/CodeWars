@@ -750,3 +750,9 @@ const remainder = (a, b) => a > b ? a % b : b % a;
 // It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
 const removeChar = str => str.slice(1, str.length - 1);
 console.log(removeChar('eloquent'));
+
+
+// You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+// Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+const updateLight = current => current === 'green' ? current = 'yellow' : current === 'yellow' ? current = 'red' : current = 'green';
+
