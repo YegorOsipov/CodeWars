@@ -742,3 +742,6 @@ function spinWords(words){
   }).join(' ');
 }
 
+
+// Write a function that accepts two arguments and returns the remainder after dividing the larger number by the smaller number.
+const remainder = (a, b) => a > b ? a % b : b % a; 
