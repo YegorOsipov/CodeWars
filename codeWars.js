@@ -756,3 +756,20 @@ console.log(removeChar('eloquent'));
 // Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
 const updateLight = current => current === 'green' ? current = 'yellow' : current === 'yellow' ? current = 'red' : current = 'green';
 
+
+
+function getCount(str) {
+  let vowelsCount = 0;
+  let arrStr = str.split('');
+  let volwes = ['a', 'e', 'i', 'o', 'u'];
+  arrStr.forEach(el => {
+    for (let i = 0; i < volwes.length; i++) {
+      if (el === volwes[i]) {
+        vowelsCount++;
+        console.log(el);
+      }
+    }
+  });
+  return vowelsCount;
+}
+console.log(getCount("o a kak ushakov lil vo kashu kakao"));
