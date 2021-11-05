@@ -832,3 +832,24 @@ const sumStr = (a, b) => String(Number(a) + Number(b));
 console.log(sumStr('', 10));
 
 
+function elevatorDistance(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if ((arr[i] - arr[i + 1]) < 0) {
+      sum -= (arr[i] - arr[i + 1]);
+    } else if ((arr[i] - arr[i + 1]) > 0) {
+      sum += (arr[i] - arr[i + 1]);
+    } else {
+      sum += 0;
+    }
+  }
+  return sum;
+}
+
+function elevatorDistance(array) {
+  var distance = 0;
+  for (var i = 0; i < array.length - 1; i++) {
+    distance += Math.abs(array[i] - array[i + 1]);
+  }
+  return distance;
+}
