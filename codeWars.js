@@ -865,3 +865,14 @@ const areEquallyStrong = (yL, yR, fL, fR) => ((yL == fL) || (yL == fR)) && ((yR 
 console.log(areEquallyStrong(13, 13, 13, 5));
 
 // let areEquallyStrong = (a,b,c,d) => a==c && b==d || a==d && b==c;
+
+
+// Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+// Write a function which takes a list of strings and returns each line prepended by the correct number.
+// The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+
+let number = (arr) => {
+  return arr.map((el, i) => {
+     return el = (i + 1) + ': ' + el;
+   });
+ }
