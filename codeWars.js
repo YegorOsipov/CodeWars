@@ -832,6 +832,8 @@ const sumStr = (a, b) => String(Number(a) + Number(b));
 console.log(sumStr('', 10));
 
 
+// Imagine you start on the 5th floor of a building, then travel down to the 2nd floor, then back up to the 8th floor. You have travelled a total of 3 + 6 = 9 floors of distance.
+// Given an array representing a series of floors you must reach by elevator, return an integer representing the total distance travelled for visiting each floor in the array in order.
 function elevatorDistance(arr) {
   let sum = 0;
   for (let i = 0; i < arr.length - 1; i++) {
@@ -853,3 +855,13 @@ function elevatorDistance(array) {
   }
   return distance;
 }
+
+
+
+// Call two arms equally strong if the heaviest weights they each are able to lift are equal.
+// Call two people equally strong if their strongest arms are equally strong (the strongest arm can be both the right and the left), and so are their weakest arms.
+// Given your and your friend's arms' lifting capabilities find out if you two are equally strong.
+const areEquallyStrong = (yL, yR, fL, fR) => ((yL == fL) || (yL == fR)) && ((yR == fL) || (yR == fR)) && ((yL + yR) == (fR + fL));
+console.log(areEquallyStrong(13, 13, 13, 5));
+
+// let areEquallyStrong = (a,b,c,d) => a==c && b==d || a==d && b==c;
