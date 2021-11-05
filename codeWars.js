@@ -877,7 +877,11 @@ let number = (arr) => {
  }
 
 
- function solve(s){
+
+//  In this Kata, you will be given a string that may have mixed uppercase and lowercase letters and your task is to convert that string to either lowercase only or uppercase only based on:
+//  make as few changes as possible.
+//  if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+function solve(s){
   if (s.match(/[a-z]/g).length === s.length) {
     return s;
   } else if (s.match(/[A-Z]/g).length > s.length / 2) {
