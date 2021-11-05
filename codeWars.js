@@ -870,9 +870,20 @@ console.log(areEquallyStrong(13, 13, 13, 5));
 // Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
 // Write a function which takes a list of strings and returns each line prepended by the correct number.
 // The numbering starts at 1. The format is n: string. Notice the colon and space in between.
-
 let number = (arr) => {
   return arr.map((el, i) => {
      return el = (i + 1) + ': ' + el;
    });
  }
+
+
+ function solve(s){
+  if (s.match(/[a-z]/g).length === s.length) {
+    return s;
+  } else if (s.match(/[A-Z]/g).length > s.length / 2) {
+    return s.toUpperCase();
+  } else {
+    return s.toLowerCase();
+  }
+}
+console.log(solve('code'));
