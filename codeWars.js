@@ -891,3 +891,33 @@ function solve(s){
   }
 }
 console.log(solve('code'));
+
+
+function last(x){
+  return x.split(' ').map(el => revStr(el)).sort().map(el => revStr(el));
+}
+console.log(last('man i need a taxi up to ubud'));
+
+function revStr(el) {
+  return el.split('').reverse().join('');
+}
+
+
+
+function last(x) {
+  let arr = [];
+  x.split(' ').reduce((prev, current) => {
+    
+  });
+}
+
+
+function square(number){
+  let arr = [1];
+  let el = 1;
+  for (let i = 1; i < 64; i++) {
+    arr.push(el += el);
+  }
+  return arr[number - 1];
+}
+console.log(square(16));
