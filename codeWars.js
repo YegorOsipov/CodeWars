@@ -682,242 +682,258 @@
 // move to the next screw: 1 second
 // switch screwdrivers: 5 seconds
 // Your task is to return the total time taken to remove all the screws, in seconds.
-function sc(screws) {
-  let time = 1;
-  let arr = screws.split('');
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] !== arr[i + 1]) {
-      time += 7;
-    } else {
-      time += 2;
-    }
-  }
-  return time;
-}
-
-console.log(sc("-+-+-----------"));
-
-
-
-// Your task is to write a function maskify, which changes all but the last four characters into '#'.
-function maskify(cc) {
-  if (cc.length < 5) {
-    return cc;
-  }
-  let arr = cc.split('');
-  for (let i = 0; i < arr.length - 4; i ++) {
-    arr[i] = '#';
-  } 
-  return arr.join('');
-}
-console.log(maskify('556364607935616'));
-
-function maskify(cc) {
-  return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
-}
-
-
-function spinWords(str){
-  let arr = str.split(' ');
-  if (arr.length === 1) {
-    if (str.length > 4) {
-      return str.split('').reverse().join('');
-    } else {
-      return str;
-    }
-  }
-
-  return arr.map(function(elem) {
-    if (elem.length > 4) {
-      return elem.split('').reverse().join('');
-    } else {
-      return elem;
-    }
-  }).join(' ');
-}
-
-function spinWords(words){
-  return words.split(' ').map(function (word) {
-    return (word.length > 4) ? word.split('').reverse().join('') : word;
-  }).join(' ');
-}
-
-
-// Write a function that accepts two arguments and returns the remainder after dividing the larger number by the smaller number.
-const remainder = (a, b) => a > b ? a % b : b % a; 
-
-
-// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
-const removeChar = str => str.slice(1, str.length - 1);
-console.log(removeChar('eloquent'));
-
-
-// You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
-// Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
-const updateLight = current => current === 'green' ? current = 'yellow' : current === 'yellow' ? current = 'red' : current = 'green';
-
-
-
-function getCount(str) {
-  let vowelsCount = 0;
-  let arrStr = str.split('');
-  let volwes = ['a', 'e', 'i', 'o', 'u'];
-  arrStr.forEach(el => {
-    for (let i = 0; i < volwes.length; i++) {
-      if (el === volwes[i]) {
-        vowelsCount++;
-        console.log(el);
-      }
-    }
-  });
-  return vowelsCount;
-}
-console.log(getCount("o a kak ushakov lil vo kashu kakao"));
-
-// function getCount(str) {
-//   var vowelsCount = 0;
-//   var vowels = ["a","e","i","o","u"];
-//   for(var i = 0;i < str.length;i++){
-//     for(var j=0;j<vowels.length;j++){
-//       if(str[i] === vowels[j]){
-//         vowelsCount++;
-//       }
+// function sc(screws) {
+//   let time = 1;
+//   let arr = screws.split('');
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i] !== arr[i + 1]) {
+//       time += 7;
+//     } else {
+//       time += 2;
 //     }
 //   }
-  
+//   return time;
+// }
+
+// console.log(sc("-+-+-----------"));
+
+
+
+// // Your task is to write a function maskify, which changes all but the last four characters into '#'.
+// function maskify(cc) {
+//   if (cc.length < 5) {
+//     return cc;
+//   }
+//   let arr = cc.split('');
+//   for (let i = 0; i < arr.length - 4; i ++) {
+//     arr[i] = '#';
+//   } 
+//   return arr.join('');
+// }
+// console.log(maskify('556364607935616'));
+
+// function maskify(cc) {
+//   return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+// }
+
+
+// function spinWords(str){
+//   let arr = str.split(' ');
+//   if (arr.length === 1) {
+//     if (str.length > 4) {
+//       return str.split('').reverse().join('');
+//     } else {
+//       return str;
+//     }
+//   }
+
+//   return arr.map(function(elem) {
+//     if (elem.length > 4) {
+//       return elem.split('').reverse().join('');
+//     } else {
+//       return elem;
+//     }
+//   }).join(' ');
+// }
+
+// function spinWords(words){
+//   return words.split(' ').map(function (word) {
+//     return (word.length > 4) ? word.split('').reverse().join('') : word;
+//   }).join(' ');
+// }
+
+
+// // Write a function that accepts two arguments and returns the remainder after dividing the larger number by the smaller number.
+// const remainder = (a, b) => a > b ? a % b : b % a; 
+
+
+// // It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+// const removeChar = str => str.slice(1, str.length - 1);
+// console.log(removeChar('eloquent'));
+
+
+// // You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+// // Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+// const updateLight = current => current === 'green' ? current = 'yellow' : current === 'yellow' ? current = 'red' : current = 'green';
+
+
+
+// function getCount(str) {
+//   let vowelsCount = 0;
+//   let arrStr = str.split('');
+//   let volwes = ['a', 'e', 'i', 'o', 'u'];
+//   arrStr.forEach(el => {
+//     for (let i = 0; i < volwes.length; i++) {
+//       if (el === volwes[i]) {
+//         vowelsCount++;
+//         console.log(el);
+//       }
+//     }
+//   });
 //   return vowelsCount;
 // }
+// console.log(getCount("o a kak ushakov lil vo kashu kakao"));
+
+// // function getCount(str) {
+// //   var vowelsCount = 0;
+// //   var vowels = ["a","e","i","o","u"];
+// //   for(var i = 0;i < str.length;i++){
+// //     for(var j=0;j<vowels.length;j++){
+// //       if(str[i] === vowels[j]){
+// //         vowelsCount++;
+// //       }
+// //     }
+// //   }
+  
+// //   return vowelsCount;
+// // }
 
 
 
-// function makeString(s){
-//   let result = '';
-//   s.split(' ').forEach(el => {
-//     result += el.slice(0, 1);
-//   });
-//   return result;
+// // function makeString(s){
+// //   let result = '';
+// //   s.split(' ').forEach(el => {
+// //     result += el.slice(0, 1);
+// //   });
+// //   return result;
+// // }
+// // console.log(makeString("sees eyes xray yoat"));
+
+// // const makeString = s => s.split(' ').map(x => x[0]).join('')
+
+
+// // You have an array of non-negative integers. You need to calculate the difference between the 1st biggest number and the 2nd biggest number of the array.
+// function diffBig2(arr) {
+//   let newArr = [];
+//   newArr.push(arr.splice(arr.indexOf(maxDigit(arr)), 1));
+//   newArr.push(arr.splice(arr.indexOf(maxDigit(arr)), 1));
+//   return newArr[0][0] - newArr[1][0];
 // }
-// console.log(makeString("sees eyes xray yoat"));
+// console.log(diffBig2([13, 3, 66]));
 
-// const makeString = s => s.split(' ').map(x => x[0]).join('')
-
-
-// You have an array of non-negative integers. You need to calculate the difference between the 1st biggest number and the 2nd biggest number of the array.
-function diffBig2(arr) {
-  let newArr = [];
-  newArr.push(arr.splice(arr.indexOf(maxDigit(arr)), 1));
-  newArr.push(arr.splice(arr.indexOf(maxDigit(arr)), 1));
-  return newArr[0][0] - newArr[1][0];
-}
-console.log(diffBig2([13, 3, 66]));
-
-function maxDigit(arr) {
-  let max = arr[0];
-  for (let elem of arr) {
-    if (elem > max) {
-      max = elem;
-    }
-  }
-  return max;
-}
-
-// const diffBig2 = arr => {
-//   let max = Math.max(...arr);
-//   arr.splice(arr.indexOf(max), 1);
-//   return max - Math.max(...arr);
+// function maxDigit(arr) {
+//   let max = arr[0];
+//   for (let elem of arr) {
+//     if (elem > max) {
+//       max = elem;
+//     }
+//   }
+//   return max;
 // }
 
-// Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
-const sumStr = (a, b) => String(Number(a) + Number(b));
-console.log(sumStr('', 10));
+// // const diffBig2 = arr => {
+// //   let max = Math.max(...arr);
+// //   arr.splice(arr.indexOf(max), 1);
+// //   return max - Math.max(...arr);
+// // }
+
+// // Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+// const sumStr = (a, b) => String(Number(a) + Number(b));
+// console.log(sumStr('', 10));
 
 
-// Imagine you start on the 5th floor of a building, then travel down to the 2nd floor, then back up to the 8th floor. You have travelled a total of 3 + 6 = 9 floors of distance.
-// Given an array representing a series of floors you must reach by elevator, return an integer representing the total distance travelled for visiting each floor in the array in order.
-function elevatorDistance(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length - 1; i++) {
-    if ((arr[i] - arr[i + 1]) < 0) {
-      sum -= (arr[i] - arr[i + 1]);
-    } else if ((arr[i] - arr[i + 1]) > 0) {
-      sum += (arr[i] - arr[i + 1]);
-    } else {
-      sum += 0;
-    }
-  }
-  return sum;
-}
+// // Imagine you start on the 5th floor of a building, then travel down to the 2nd floor, then back up to the 8th floor. You have travelled a total of 3 + 6 = 9 floors of distance.
+// // Given an array representing a series of floors you must reach by elevator, return an integer representing the total distance travelled for visiting each floor in the array in order.
+// function elevatorDistance(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if ((arr[i] - arr[i + 1]) < 0) {
+//       sum -= (arr[i] - arr[i + 1]);
+//     } else if ((arr[i] - arr[i + 1]) > 0) {
+//       sum += (arr[i] - arr[i + 1]);
+//     } else {
+//       sum += 0;
+//     }
+//   }
+//   return sum;
+// }
 
-function elevatorDistance(array) {
-  var distance = 0;
-  for (var i = 0; i < array.length - 1; i++) {
-    distance += Math.abs(array[i] - array[i + 1]);
-  }
-  return distance;
-}
-
-
-
-// Call two arms equally strong if the heaviest weights they each are able to lift are equal.
-// Call two people equally strong if their strongest arms are equally strong (the strongest arm can be both the right and the left), and so are their weakest arms.
-// Given your and your friend's arms' lifting capabilities find out if you two are equally strong.
-const areEquallyStrong = (yL, yR, fL, fR) => ((yL == fL) || (yL == fR)) && ((yR == fL) || (yR == fR)) && ((yL + yR) == (fR + fL));
-console.log(areEquallyStrong(13, 13, 13, 5));
-
-// let areEquallyStrong = (a,b,c,d) => a==c && b==d || a==d && b==c;
-
-
-// Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
-// Write a function which takes a list of strings and returns each line prepended by the correct number.
-// The numbering starts at 1. The format is n: string. Notice the colon and space in between.
-let number = (arr) => {
-  return arr.map((el, i) => {
-     return el = (i + 1) + ': ' + el;
-   });
- }
+// function elevatorDistance(array) {
+//   var distance = 0;
+//   for (var i = 0; i < array.length - 1; i++) {
+//     distance += Math.abs(array[i] - array[i + 1]);
+//   }
+//   return distance;
+// }
 
 
 
-//  In this Kata, you will be given a string that may have mixed uppercase and lowercase letters and your task is to convert that string to either lowercase only or uppercase only based on:
-//  make as few changes as possible.
-//  if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
-function solve(s){
-  if (s.match(/[a-z]/g).length === s.length) {
-    return s;
-  } else if (s.match(/[A-Z]/g).length > s.length / 2) {
-    return s.toUpperCase();
-  } else {
-    return s.toLowerCase();
-  }
-}
-console.log(solve('code'));
+// // Call two arms equally strong if the heaviest weights they each are able to lift are equal.
+// // Call two people equally strong if their strongest arms are equally strong (the strongest arm can be both the right and the left), and so are their weakest arms.
+// // Given your and your friend's arms' lifting capabilities find out if you two are equally strong.
+// const areEquallyStrong = (yL, yR, fL, fR) => ((yL == fL) || (yL == fR)) && ((yR == fL) || (yR == fR)) && ((yL + yR) == (fR + fL));
+// console.log(areEquallyStrong(13, 13, 13, 5));
+
+// // let areEquallyStrong = (a,b,c,d) => a==c && b==d || a==d && b==c;
 
 
-function last(x){
-  return x.split(' ').map(el => revStr(el)).sort().map(el => revStr(el));
-}
-console.log(last('man i need a taxi up to ubud'));
-
-function revStr(el) {
-  return el.split('').reverse().join('');
-}
+// // Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+// // Write a function which takes a list of strings and returns each line prepended by the correct number.
+// // The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+// let number = (arr) => {
+//   return arr.map((el, i) => {
+//      return el = (i + 1) + ': ' + el;
+//    });
+//  }
 
 
 
-function last(x) {
-  let arr = [];
-  x.split(' ').reduce((prev, current) => {
+// //  In this Kata, you will be given a string that may have mixed uppercase and lowercase letters and your task is to convert that string to either lowercase only or uppercase only based on:
+// //  make as few changes as possible.
+// //  if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+// function solve(s){
+//   if (s.match(/[a-z]/g).length === s.length) {
+//     return s;
+//   } else if (s.match(/[A-Z]/g).length > s.length / 2) {
+//     return s.toUpperCase();
+//   } else {
+//     return s.toLowerCase();
+//   }
+// }
+// console.log(solve('code'));
+
+
+// function last(x){
+//   return x.split(' ').map(el => revStr(el)).sort().map(el => revStr(el));
+// }
+// console.log(last('man i need a taxi up to ubud'));
+
+// function revStr(el) {
+//   return el.split('').reverse().join('');
+// }
+
+
+
+// function last(x) {
+//   let arr = [];
+//   x.split(' ').reduce((prev, current) => {
     
-  });
-}
+//   });
+// }
 
 
-function square(number){
-  let arr = [1];
-  let el = 1;
-  for (let i = 1; i < 64; i++) {
-    arr.push(el += el);
-  }
-  return arr[number - 1];
+// function square(number){
+//   let arr = [1];
+//   let el = 1;
+//   for (let i = 1; i < 64; i++) {
+//     arr.push(el += el);
+//   }
+//   return arr[number - 1];
+// }
+// console.log(square(5));
+
+// function square(n){
+//   return Math.pow(2,n-1);
+// }
+
+const num = 5;
+let str = '';
+for (let i = 1; i <= num; i++) {
+    if (i > 1) {
+        str += '<br>';
+    }
+    for (let j = 1; j <= num; j++) {
+        str += '+';
+    }
 }
-console.log(square(16));
+console.log(str);
